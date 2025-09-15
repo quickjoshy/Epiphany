@@ -16,8 +16,8 @@ public class MessageController {
 
     private final MessageRepository repository;
 
-    @PostMapping("/CreateMessage/{text}")
-    public Message CreateMessage(@PathVariable String text){
+    @PostMapping("/CreateMessage")
+    public Message CreateMessage(@RequestBody String text){
         Message message = new Message(text);
         return repository.save(message);
     }
