@@ -1,0 +1,113 @@
+/* Full-page layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5); /* background gradient */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container panel with dark blue → purple gradient */
+.wrapperContainer {
+  background: linear-gradient(145deg, #1e3c72, #2a5298); /* dark blue to purple */
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  
+  width: 60vw;   /* 60% of viewport width */
+  height: 80vh;  /* 80% of viewport height */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Message display with outline */
+.msgDisplay {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #ffffff; /* white text for contrast */
+  min-height: 80px;
+  max-height: 150px;
+  overflow-y: auto;
+  word-wrap: break-word;
+  padding: 15px;
+  width: 100%;
+  border: 2px solid #7f5af0; /* bright purple outline */
+  border-radius: 10px;
+  background-color: rgba(0, 0, 50, 0.5); /* semi-transparent dark */
+  transition: all 0.3s ease;
+}
+
+/* Fade animation for message changes */
+.msgDisplay.fade {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Stats display wrapper closer to message box */
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 250px;
+  margin: 15px 0 25px 0;
+}
+
+
+/* Likes */
+.likeDisplay {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4caf50; /* base green */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.likeDisplay:hover,
+.likeDisplay:active {
+  color: #00ff7f; /* neon green highlight */
+  transform: scale(1.15);
+}
+
+/* Dislikes */
+.dislikeDisplay {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e53935; /* base red */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.dislikeDisplay:hover,
+.dislikeDisplay:active {
+  color: #ff5252; /* brighter red highlight */
+  transform: scale(1.15);
+}
+
+
+/* Button styling */
+.msgButton {
+  background-color: #7f5af0; /* bright purple */
+  color: #ffffff;
+  border: none;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.msgButton:hover {
+  background-color: #5a3dc4; /* darker purple on hover */
+  transform: translateY(-2px);
+}
+
+.msgButton:active {
+  transform: translateY(0);
+}
